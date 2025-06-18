@@ -1,5 +1,5 @@
 let weather = {
-    apiKey: "19cb3275d0fe4535beb6f46287ae84d6",
+    apiKey: "a64234bcd09f842da1155c249d3effbe",
     fetchWeather: function (city) {
       fetch(
         "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -40,7 +40,7 @@ let weather = {
   };
   let geocode = {
     reverseGeocode: function (latitude, longitude){
-      var api_key = 'bd7d24fe4ab34b808f37acd4e67932e4';
+      var api_key = '19cb3275d0fe4535beb6f46287ae84d6';
 
     
       var api_url = 'https://api.opencagedata.com/geocode/v1/json'
