@@ -52,21 +52,25 @@ let weather = {
         + '&pretty=1'
         + '&no_annotations=1';
     
-      // see full list of required and optional parameters:
-      // https://opencagedata.com/api#forward
     
       var request = new XMLHttpRequest();
       request.open('GET', request_url, true);
     
       request.onload = function() {
-        // see full list of possible response codes:
-        // https://opencagedata.com/api#codes
     
         if (request.status === 200){
           // Success!
           var data = JSON.parse(request.responseText);
        
-        weather.fetchWeather(data.results[0].components.city);
+        const components = data.results[0].components;
+          const locationName = components.city || components.town || components.village || components.county || components.state;
+          
+          if (locationName) {
+            weather.fetchWeather(locationName);
+          } else {
+            // If we still can't find a name, use the default fallback.
+            weather.fetchWeather("Mumbai");
+          }
     
         } else if (request.status <= 500){
           // We reached our target server, but it returned an error
