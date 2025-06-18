@@ -63,7 +63,7 @@ let weather = {
           var data = JSON.parse(request.responseText);
        
         const components = data.results[0].components;
-          const locationName = components.city || components.town || components.village || components.county || components.state;
+          const locationName = components.city || components.town || components.state;
           
           if (locationName) {
             weather.fetchWeather(locationName);
