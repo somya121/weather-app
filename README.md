@@ -6,4 +6,4 @@ humidity and wind speed of all the places around the world.
 
 
 ## 🔗 Link
-[weather-appglobal.herokuapp.com/]()
+[https://weather1-application.netlify.app/]()
